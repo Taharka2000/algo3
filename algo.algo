@@ -1,0 +1,83 @@
+//probleme1
+ALGORITHM somme
+VAR
+    tab1 : ARRAY_OF_INTERGER[5];
+    tab2: ARRAY_OF_INTERGER[5];
+    somme,i:INTEGER
+BEGIN
+    tab1:=[3,1,7,9]
+    tab2:=[4,6,1,7,9]
+    sommme=0
+    FOR i FROM 0 TO tab1.length-1 STEP 1 DO
+        FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+            IF (tab1[i] === tab2[i]) THEN
+                Break ;
+            ELSE 
+                somme=somme+tab1[i]
+            END_IF
+        END_FOR
+    END_FOR
+    FOR i FROM 0 TO tab2.length-1 STEP 1 DO
+        FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+            IF (tab2[i] === tab1[i]) THEN
+                Break ;
+            ELSE 
+                somme=somme+tab2[i]
+            END_IF
+        END_FOR
+    END_FOR
+    Write("la somme est de ",somme)
+END
+//probleme2
+ALGORITHM Produit_scalaire
+    VAR
+    vecteur1 : ARRAY_OF_FLOAT[n];
+    vecteur2 : ARRAY_OF_FLOAT[n]
+    ps:FLOAT
+    i,n:INTEGER
+    BEGIN
+    //////////////////////////////
+    PROCEDURE dot_product (vecteur1 : ARRAY_OF_FLOAT[n],vecteur2 : ARRAY_OF_FLOAT[n]) 
+    VAR
+    ps:FLOAT
+    i:INTEGER
+    BEGIN
+    ps=0
+    FOR i FROM 0 TO 0 STEP 1  DO
+        ps=ps+vecteur1[i]*vecteur2[i]
+    END_FOR
+    END 
+////////////////////////////////
+    FUNCTION product_dot(vecteur1 : ARRAY_OF_FLOAT[n],vecteur2 : ARRAY_OF_FLOAT[n],ps:FLOAT) : FLOAT
+    VAR
+    i,:INTEGER
+    BEGIN
+    ps=0
+    FOR i FROM 0 TO vecteur1.length STEP 1  DO
+        ps=ps+vecteur1[i]*vecteur2[i]
+    END_FOR
+        RETURN ps ;
+    END
+    ///////////////////////////////////
+    Write("Donnez le nombre le vecteur")
+    read(n)
+        FOR i FROM min TO max STEP step  DO
+        Write("Donner lq vqluer du vcteur 1  a la position" ,i)
+        read(vecteur1[i])
+        END_FOR
+        FOR i FROM min TO max STEP step  DO
+        Write("Donner lq vqluer du vcteur 2  a la position" ,i)
+        read(vecteur2[i])
+        END_FOR
+        ps = dot_product(vecteur1,vecteur2)
+        IF (ps==0) THEN
+        Write("Les vecteurs sont orthogonaux")
+        ELSE
+        Write("Les vecteurs ne sont pas orthogonaux")
+    END_IF
+    IF (product_dot(vecteur1,vecteur2)) THEN
+            Write("Les vecteurs sont orthogonaux")
+        ELSE
+            Write("Les vecteurs ne sont pas orthogonaux")
+    END_IF
+END
