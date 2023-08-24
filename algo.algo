@@ -75,7 +75,7 @@ ALGORITHM Produit_scalaire
         ELSE
         Write("Les vecteurs ne sont pas orthogonaux")
     END_IF
-    IF (product_dot(vecteur1,vecteur2)) THEN
+    IF (product_dot(vecteur1,vecteur2)==0) THEN
             Write("Les vecteurs sont orthogonaux")
         ELSE
             Write("Les vecteurs ne sont pas orthogonaux")
